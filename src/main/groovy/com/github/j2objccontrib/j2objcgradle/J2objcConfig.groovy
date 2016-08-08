@@ -202,7 +202,7 @@ class J2objcConfig {
      * @param translateArgs add args for the 'j2objc' tool
      */
     void translateArgs(String... translateArgs) {
-        appendArgs(this.translateArgs, 'translateArgs', true, translateArgs)
+        appendArgs(this.translateArgs, 'translateArgs', false, translateArgs)
     }
 
     /**
@@ -782,7 +782,7 @@ class J2objcConfig {
         // Resolution of j2objcTranslateSource dependencies occurs always.
         // This lets users turn off autoConfigureDeps but manually set j2objcTranslateSource.
         resolveDeps()
-        configureNativeCompilation()
+   //     configureNativeCompilation()
         configureTaskState()
         finalConfigured = true
     }

@@ -61,6 +61,10 @@ class DependencyConverter {
     }
 
     void configureAll() {
+        project.logger.debug(project.configurations.toListString())
+        project.logger.debug("------------------------------------------------")
+        project.logger.debug(project.configurations.getByName('compile').dependencies.toListString())
+        project.logger.debug("------------------------------------------------")
         project.configurations.getByName('compile').dependencies.each {
             visit(it, false)
         }

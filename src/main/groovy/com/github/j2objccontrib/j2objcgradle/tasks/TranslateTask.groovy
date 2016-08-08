@@ -356,6 +356,7 @@ class TranslateTask extends DefaultTask {
                 }
 
                 // Arguments
+                args "-source 1.8"
                 args "-d", srcDir
                 args "-sourcepath", sourcepathArg
                 args "-classpath", classpathArg
@@ -368,6 +369,9 @@ class TranslateTask extends DefaultTask {
                     // Can be list of src files or a single @/../srcFilesArgFile reference
                     args arg
                 }
+
+                logger.debug("--------------")
+                logger.debug(args.toListString());
 
                 setStandardOutput stdout
                 setErrorOutput stderr
